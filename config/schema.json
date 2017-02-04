@@ -1,0 +1,27 @@
+{ "fields": [
+    {
+      "name": "offering",
+      "type": "string",
+      "example": "example_offering",
+      "facet": true
+    },
+    {
+      "name": "score",
+      "type": "string",
+      "example": "8",
+      "facet": true
+    },
+    {
+      "name": "tags",
+      "type": "arrayofstrings",
+      "example": "example_tag_1,example_tag_2",
+      "facet": true
+    },
+    {
+      "name": "comment",
+      "type": "string",
+      "example": "example_comment",
+      "facet": false
+    }
+  ]
+}  
