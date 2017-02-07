@@ -1,6 +1,6 @@
 {
   "name": "simple-search-service-sync",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cloudant -> Simple-Search service synchronization",
   "main": "app.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.ibm.com/ptitzler"
+    "url": "https://github.com/ptitzler/simple-search-service-sync"
   },
   "author": "ptitzler@us.ibm.com",
   "license": "Apache-2.0",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "async": "^2.1.4",
+    "cf-deployment-tracker-client": "^0.1.3",
     "cfenv": "^1.0.3",
     "debug": "^2.6.0",
     "express": "^4.14.1",
