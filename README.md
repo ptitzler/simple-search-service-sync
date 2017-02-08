@@ -1,5 +1,7 @@
 # simple-search-service-sync
 
+[![Build Status](https://travis-ci.org/ibm-cds-labs/simple-search-service-sync.svg?branch=master)](https://travis-ci.org/ibm-cds-labs/simple-search-service-sync)
+
 Use this service to continuously synchronize the index of a [Simple-Search-Service](https://github.com/ibm-cds-labs/simple-search-service/) instance with the content of a couchDB/Cloudant database.
 
 ### Download 
