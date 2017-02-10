@@ -1,0 +1,9 @@
+{
+	"_id": "c00000000002",
+	"name": "Cheddar 5yo",
+	"age": "medium",
+	"texture": "medium",
+	"flavor": "strong",
+	"pairings": ["Syrah"],
+	"description": "Rich flavor"
+}

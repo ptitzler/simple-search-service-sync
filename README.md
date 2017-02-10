@@ -17,32 +17,26 @@ $ cd simple-search-service-sync
 
 A schema defines the fields, their data types and whether they are indexed for faceted search. Customize `config/schema.json` to describe the data set you would like to make searchable.
 
-Simple example, describing a schema comprising of four fields, three of which will be indexed for search:
+Simple example, describing a schema comprising of three fields, two of which will be indexed for search:
 
 ```
 { "fields": [
     {
-      "name": "offering",
+      "name": "cheese",
       "type": "string",
-      "example": "example_offering",
-      "facet": true
+      "facet": true,
+      "example": "Brun-uusto"
     },
     {
-      "name": "score",
-      "type": "string",
-      "example": "8",
-      "facet": true
-    },
-    {
-      "name": "tags",
+      "name": "pairings",
       "type": "arrayofstrings",
-      "example": "example_tag_1,example_tag_2",
+      "example": "Zinfandel,Merlot",     
       "facet": true
-    },
+    },    
     {
-      "name": "comment",
+      "name": "description",
       "type": "string",
-      "example": "example_comment",
+      "example": "It's a bread cheese.",
       "facet": false
     }
   ]
@@ -56,20 +50,31 @@ Simple example, describing a schema comprising of four fields, three of which wi
 
 Whenever the SSS-sync service is notified that a document was inserted or updated a mapping function is invoked. Customize `lib/map.js` to define the mapping between document properties and the fields in the SSS schema.
 
-The following example maps the `offering`, `score`, `tags` and `comment` properties from the source document to fields. 
+The following example maps the `name`, `parirings` and `description` properties from the source document to search index fields. 
 
 ```
 	...
-	var row = null;
-	if(change) {
-		row = {
-			offering: change.doc.data.offering_id || 'undefined',
-			score: change.doc.data.score || 0,
-			tags: (change.doc.data.tags || []).join(','),
-			comment: change.doc.data.comment || ''
-		};
-	}
-	return row;
+  if(change) {
+    // sample change document (see "sample_documents/cheese1.json")
+    // change: {
+    //           doc: {
+    //            "_id": "c00000000001",
+    //            "name": "Limburger",
+    //            "age": "young",
+    //            "texture": "soft",
+    //            "flavor": "pungent",
+    //            "pairings": ["Porter","Stout"],
+    //            "description": "A stinky cheese"
+    //       }
+    // }
+    //      
+    row = {
+      cheese: change.doc.name || 'undefined',
+      pairings: (change.doc.pairings || []).join(','),
+      description: change.doc.description || ''
+    };
+  }
+  return row;
 	...
 ```
 

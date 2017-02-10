@@ -1,0 +1,9 @@
+{
+	"_id": "c00000000001",
+	"name": "Limburger",
+	"age": "young",
+	"texture": "soft",
+	"flavor": "pungent",
+	"pairings": ["Porter"],
+	"description": "A stinky cheese"
+}

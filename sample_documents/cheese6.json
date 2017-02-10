@@ -1,0 +1,9 @@
+{
+	"_id": "c00000000006",
+	"name": "Manchego",
+	"age": "young",
+	"texture": "medium",
+	"flavor": "strong",
+	"pairings": ["Cabernet","Ale"],
+	"description": "Very creamy"
+}

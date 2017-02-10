@@ -1,0 +1,9 @@
+{
+	"_id": "c00000000008",
+	"name": "Parmesan",
+	"age": "young",
+	"texture": "hard",
+	"flavor": "medium",
+	"pairings": ["Lager","Ale"],
+	"description": "Buttery and nutty"
+}

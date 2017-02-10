@@ -1,0 +1,9 @@
+{
+	"_id": "c00000000004",
+	"name": "Monterey Jack",
+	"age": "young",
+	"texture": "soft",
+	"flavor": "mild",
+	"pairings": ["Pilsner","IPA"],
+	"description": "Buttery flavor"
+}

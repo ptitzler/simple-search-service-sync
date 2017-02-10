@@ -1,6 +1,6 @@
 {
   "name": "simple-search-service-sync",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cloudant -> Simple-Search service synchronization",
   "main": "app.js",
   "scripts": {

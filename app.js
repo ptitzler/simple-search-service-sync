@@ -58,7 +58,10 @@ init(appEnv, function(err, feed, sssclient) {
 
 	// process changes in the source database one-at-a-time in the order they were received
 	const q = async.queue(function(change, asyncCallback) {
-		// Use Simple-Search-Service client to apply change to index
+		// Use Simple-Search-Service client to apply change to index.
+		// Throttle requests in case the Simple-Search-Service uses the Cloudant Lite plan,
+		// which imposes time-based limits on read/write operations. Refer to 
+		// https://console.ng.bluemix.net/catalog/services/cloudant-nosql-db/?taxonomyNavigation=apps
 		sssclient.throttledSync(change,	function(err) {
 									return asyncCallback(err);
 								});
@@ -115,4 +118,4 @@ init(appEnv, function(err, feed, sssclient) {
 });
 
 // send sample application deployment tracking request to https://github.com/IBM-Bluemix/cf-deployment-tracker-service
-//require('cf-deployment-tracker-client').track();
+require('cf-deployment-tracker-client').track();

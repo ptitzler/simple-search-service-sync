@@ -1,27 +1,21 @@
 { "fields": [
     {
-      "name": "offering",
+      "name": "cheese",
       "type": "string",
-      "example": "example_offering",
-      "facet": true
+      "facet": true,
+      "example": "Brun-uusto"
     },
     {
-      "name": "score",
-      "type": "string",
-      "example": "8",
-      "facet": true
-    },
-    {
-      "name": "tags",
+      "name": "pairings",
       "type": "arrayofstrings",
-      "example": "example_tag_1,example_tag_2",
+      "example": "Zinfandel,Merlot",     
       "facet": true
-    },
+    },    
     {
-      "name": "comment",
+      "name": "description",
       "type": "string",
-      "example": "example_comment",
+      "example": "It's a bread cheese.",
       "facet": false
     }
   ]
-}  
+}
